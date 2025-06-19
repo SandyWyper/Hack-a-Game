@@ -1,6 +1,8 @@
 import { confetti } from "https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/+esm";
 
+// lib - https://confetti.js.org/
 // Fire confetti with a delay if needed
+// - delay [number] delay in milliseconds
 export function doConfetti(delay = 0) {
   const count = 200,
     defaults = {
