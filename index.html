@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/style.css" />
+    <script src="assets/script.js" defer></script>
+  </head>
+  <body>
+    <div class="">
+      <div class="start-layout">
+        <h1 class="title">Title</h1>
+        <p class="description">Description</p>
+        <div class="image-wrapper">
+          <img
+            src="https://picsum.photos/200/300"
+            alt="image"
+            width="200"
+            height="300"
+          />
+        </div>
+        <button class="start-button" id="start-button">Start</button>
+      </div>
+      <div class="quiz-layout">
+        <h2 class="question" id="question-title">Question</h2>
+        <div class="question-image-wrapper">
+          <img
+            id="question-image"
+            src="https://picsum.photos/300/300"
+            alt="image"
+            width="300"
+            height="300"
+          />
+        </div>
+        <div class="answers-wrapper">
+          <button class="answer-button" data-answer="1">Option 1</button>
+          <button class="answer-button" data-answer="2">Option 2</button>
+          <button class="answer-button" data-answer="3">Option 3</button>
+        </div>
+      </div>
+      <div class="end-layout">
+        <div class="result-image-wrapper">
+          <img
+            src="https://picsum.photos/200/300"
+            alt="image"
+            width="200"
+            height="300"
+          />
+        </div>
+        <h2 class="result-title">Result</h2>
+        <p class="result-description" id="result-description">Description</p>
+        <div class="score-wrapper">
+          <p class="score-title">Score</p>
+          <p class="score-value" id="score-value">1/10</p>
+        </div>
+        <div class="retry-button-wrapper">
+          <button class="retry-button" id="retry-button">Retry</button>
+        </div>
+      </div>
+      <footer>
+        <p>Footer</p>
+      </footer>
+    </div>
+  </body>
+</html>
