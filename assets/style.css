@@ -6,3 +6,20 @@ footer {
   border: 1px solid #000;
   margin: 20px;
 }
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin-top: 40px;
+}
+.layout {
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  width: 300px;
+  border-radius: 8px;
+}
+footer {
+  margin-top: 40px;
+  font-size: 1em;
+  color: #555;
+}
