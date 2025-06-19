@@ -1,10 +1,11 @@
 // this function takes a breed of cat or dog and returns an image of that breed
 // args:
 //  - breed (string) [required] - the breed of the animal
-//  - animalType (string) [optional] - the type of animal (cat or dog)
+//  - animalType (string) [optional] - the type of animal (cats or dogs)
 
 export async function getImage(breed, animalType) {
   if (!breed) return null;
+  // this is a temporary return value, so that we don't use up our API quota in development
   return "https://api-ninjas.com/images/cats/american_bobtail.jpg";
 
   //   try {
