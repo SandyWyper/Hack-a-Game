@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const endLayout = document.getElementById('end-layout');
   const startBtn = document.getElementById('start-button');
   const quizBtns = document.querySelectorAll('.answer-button');
+  const retryBtn = document.getElementById('retry-button');
 
   function showLayout(layoutToShow) {
     startLayout.style.display = 'none';
@@ -26,5 +27,9 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', () => {
       showLayout(endLayout);
     });
+  });
+
+  retryBtn.addEventListener('click', () => {
+    showLayout(quizLayout);
   });
 });
