@@ -8,25 +8,27 @@
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="assets/images/favicon-16x16.png" />
+      href="assets/images/favicon-16x16.png"
+    />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
-      crossorigin="anonymous" />
+      crossorigin="anonymous"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
-      rel="stylesheet" />
+      rel="stylesheet"
+    />
     <script
       src="https://kit.fontawesome.com/a3ffa70fd5.js"
-      crossorigin="anonymous"></script>
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="assets/style.css" />
-    <script src="./assets/scripts/confetti.js" defer type="module"></script>
-    <script src="./assets/scripts/getImage.js" defer type="module"></script>
-    <script src="./assets/scripts/catsndogs.js" defer type="module"></script>
-    <script src="./assets/scripts/script.js" defer type="module"></script>
+
+    <script src="./assets/scripts/index.js" defer type="module"></script>
   </head>
 
   <body>
@@ -37,15 +39,18 @@
           <p class="description">Description</p>
           <div class="image-wrapper">
             <img
-              src="assets/images/favicon-16x16.png"
+              src="assets/images/hero.png"
               alt="image"
-              width="200"
-              height="300" />
+              width="300"
+              height="300"
+              loading="eager"
+            />
           </div>
           <button
             type="button"
             id="start-button"
-            class="btn btn-dark start-button mt-2">
+            class="btn btn-dark start-button mt-2"
+          >
             Start
           </button>
         </div>
@@ -59,22 +64,26 @@
               src="https://picsum.photos/300/300"
               alt="image"
               width="300"
-              height="300" />
+              height="300"
+            />
           </div>
           <div class="answers-wrapper">
             <button
               class="answer-button btn btn-dark start-button mt-2"
-              data-answer="1">
+              data-answer="1"
+            >
               Option 1
             </button>
             <button
               class="answer-button btn btn-dark start-button mt-2"
-              data-answer="2">
+              data-answer="2"
+            >
               Option 2
             </button>
             <button
               class="answer-button btn btn-dark start-button mt-2"
-              data-answer="3">
+              data-answer="3"
+            >
               Option 3
             </button>
           </div>
@@ -87,7 +96,8 @@
               src="https://picsum.photos/200/300"
               alt="image"
               width="200"
-              height="300" />
+              height="300"
+            />
           </div>
           <h2 class="result-title">Result</h2>
           <p class="result-description" id="result-description">Description</p>
@@ -98,8 +108,9 @@
           <div class="retry-button-wrapper">
             <button
               type="button"
-              id="start-button"
-              class="btn btn-dark start-button mt-2">
+              id="retry-button"
+              class="btn btn-dark start-button mt-2"
+            >
               Retake quiz
             </button>
           </div>
@@ -116,6 +127,7 @@
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
-      crossorigin="anonymous"></script>
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
