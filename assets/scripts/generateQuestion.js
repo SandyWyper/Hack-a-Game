@@ -1,11 +1,30 @@
-import { getImage } from "./getImage";
+import { cats } from "./catsndogs.js";
+import { getImage } from "./getImage.js";
 
-export function generateQuestion(animalType = "cats") {
-  const question = {
-    imageURL: "https://api-ninjas.com/images/cats/american_bobtail.jpg",
-    options: ["Paris", "London", "Rome"],
-    answer: "Paris",
+export async function generateQuestion() {
+  
+  const correctIndex = Math.floor(Math.random() * cats.length);
+  const correctBreed = cats[correctIndex];
+
+  
+  let incorrectOptions = [];
+  while (incorrectOptions.length < 2) {
+    const randomIndex = Math.floor(Math.random() * cats.length);
+    if (randomIndex !== correctIndex && !incorrectOptions.includes(cats[randomIndex])) {
+      incorrectOptions.push(cats[randomIndex]);
+    }
+  }
+
+  //Shuffle options
+  const options = [correctBreed, ...incorrectOptions].sort(() => Math.random() - 0.5);
+
+  
+  const imageURL = await getImage(correctBreed, "cats");
+
+  
+  return {
+    imageURL,
+    options,
+    answer: correctBreed,
   };
-
-  return question;
 }
