@@ -23,3 +23,68 @@ footer {
   font-size: 1em;
   color: #555;
 }
+.quiz-layout,
+.end-layout {
+  padding: 20px;
+  border: 1px solid #000;
+  margin: 20px;
+}
+
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.start-layout,
+.quiz-layout,
+.end-layout {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.title,
+h2 {
+  font-family: "Londrina Solid", sans-serif;
+  text-align: center;
+}
+
+p {
+  font-family: "Roboto flex", sans-serif;
+}
+
+#hero {
+  height: 400px;
+}
+
+.answers-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.end-layout {
+  margin-bottom: 70px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: left;
+  padding: 10px;
+  background-color: black;
+  height: 40px;
+  color: white;
+}
+
+footer > p {
+  color: white;
+  font-size: 13px;
+}
+
+footer > i {
+  color: white;
+  text-align: left;
+}
