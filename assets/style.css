@@ -1,67 +1,100 @@
-.start-layout,
-.quiz-layout,
-.end-layout,
-footer {
-  padding: 20px;
-  border: 1px solid #000;
-  margin: 20px;
-}
-body {
-  font-family: Arial, sans-serif;
+/* typography */
+h1,
+h2,
+h3 {
+  font-family: "Londrina Solid", sans-serif;
   text-align: center;
-  margin-top: 40px;
-}
-.layout {
-  margin: 20px auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  width: 300px;
-  border-radius: 8px;
-}
-footer {
-  margin-top: 40px;
-  font-size: 1em;
-  color: #555;
-}
-.quiz-layout,
-.end-layout {
-  padding: 20px;
-  border: 1px solid #000;
-  margin: 20px;
 }
 
+h4,
+h5,
+h6,
+p {
+  font-family: "Roboto flex", sans-serif;
+}
+
+/* buttons */
+.start-button {
+  font-size: 1.2rem;
+  padding: 10px;
+  font-family: "Londrina Solid", sans-serif;
+  border-radius: 5px;
+  width: 100%;
+}
+.answer-button {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #000;
+  width: 100%;
+}
+.retry-button {
+  font-size: 1.2rem;
+  padding: 10px;
+  font-family: "Londrina Solid", sans-serif;
+  border-radius: 5px;
+  width: 100%;
+}
+.answer-button.correct {
+  background-color: #00ff00;
+}
+.answer-button.wrong {
+  background-color: #ff0000;
+}
+
+/* layout */
 .app-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 .start-layout,
 .quiz-layout,
 .end-layout {
   display: flex;
   justify-content: center;
-  text-align: center;
+  max-width: 768px;
+  margin: 0 auto;
 }
 
-.title,
-h2 {
-  font-family: "Londrina Solid", sans-serif;
-  text-align: center;
+.quiz-layout,
+.end-layout {
+  padding: 20px;
+  border: 1px solid #000;
+  margin: 20px;
 }
 
-p {
-  font-family: "Roboto flex", sans-serif;
+.cat-dog-toggle-wrapper {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 6px;
+  border-radius: 5px;
+  background-color: #000;
+  color: #fff;
 }
 
-#hero {
-  height: 400px;
+.start-image-wrapper {
+  margin-bottom: 2rem;
+}
+.start-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.question-image-wrapper {
+  margin-bottom: 2rem;
+}
+.question-image-wrapper img {
+  width: auto;
+  object-fit: contain;
 }
 
 .answers-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 10px 0;
 }
 
 .end-layout {
@@ -69,14 +102,17 @@ p {
 }
 
 footer {
-  position: fixed;
+  display: flex;
+  justify-content: space-between;
   bottom: 0;
   width: 100%;
   text-align: left;
   padding: 10px;
   background-color: black;
-  height: 40px;
   color: white;
+  margin-top: 40px;
+  font-size: 1em;
+  color: #555;
 }
 
 footer > p {

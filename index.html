@@ -35,9 +35,12 @@
     <div class="app-wrapper">
       <div class="start-layout" id="start-layout">
         <div class="start-wrapper">
-          <h1 class="title">Cat quiz-wrapper</h1>
-          <p class="description">Description</p>
-          <div class="image-wrapper">
+          <div class="cat-dog-toggle-wrapper">Toggle between cat and dog</div>
+          <h1 class="title">Cat Quiz</h1>
+          <p class="description">
+            Test your knowledge of cats and dogs with this quiz!
+          </p>
+          <div class="start-image-wrapper">
             <img
               src="assets/images/hero.png"
               alt="image"
@@ -46,18 +49,16 @@
               loading="eager"
             />
           </div>
-          <button
-            type="button"
-            id="start-button"
-            class="btn btn-dark start-button mt-2"
-          >
+          <button type="button" id="start-button" class="start-button">
             Start
           </button>
         </div>
       </div>
       <div class="quiz-layout" id="quiz-layout">
         <div class="quiz-wrapper">
-          <h2 class="question" id="question-title">Question</h2>
+          <h2 class="question" id="question-title">
+            Question <span id="question-count"></span>
+          </h2>
           <div class="question-image-wrapper">
             <img
               id="question-image"
@@ -68,24 +69,18 @@
             />
           </div>
           <div class="answers-wrapper">
-            <button
-              class="answer-button btn btn-dark start-button mt-2"
-              data-answer="1"
-            >
+            <button class="answer-button" data-answer-index="0">
               Option 1
             </button>
-            <button
-              class="answer-button btn btn-dark start-button mt-2"
-              data-answer="2"
-            >
+            <button class="answer-button" data-answer-index="1">
               Option 2
             </button>
-            <button
-              class="answer-button btn btn-dark start-button mt-2"
-              data-answer="3"
-            >
+            <button class="answer-button" data-answer-index="2">
               Option 3
             </button>
+          </div>
+          <div class="answer-feedback-wrapper">
+            <p class="answer-feedback-text" id="answer-feedback-text"></p>
           </div>
         </div>
       </div>
@@ -103,14 +98,10 @@
           <p class="result-description" id="result-description">Description</p>
           <div class="score-wrapper">
             <p class="score-title">Score</p>
-            <p class="score-value" id="score-value">1/10</p>
+            <p class="score-value" id="score-value"></p>
           </div>
           <div class="retry-button-wrapper">
-            <button
-              type="button"
-              id="retry-button"
-              class="btn btn-dark start-button mt-2"
-            >
+            <button type="button" id="retry-button" class="retry-button">
               Retake quiz
             </button>
           </div>

@@ -1,18 +1,19 @@
-// import { doConfetti } from "./confetti.js";
-// import { getImage } from "./getImage.js";
-// import { cats, dogs } from "./catsndogs.js";
+import { generateQuestion } from "./generateQuestion.js";
 import { showScorePage } from "./showScorePage.js";
+import { populateQuestion } from "./populateQuestion.js";
+import {
+  startLayout,
+  quizLayout,
+  endLayout,
+  startBtn,
+  quizBtns,
+  retryBtn,
+  answerFeedbackElement,
+} from "./elementRefs.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   // console.log(cats, dogs, "cats and dogs");
   // console.log(getImage("breed", "cats"), "getImage");
-
-  const startLayout = document.getElementById("start-layout");
-  const quizLayout = document.getElementById("quiz-layout");
-  const endLayout = document.getElementById("end-layout");
-  const startBtn = document.getElementById("start-button");
-  const quizBtns = document.querySelectorAll(".answer-button");
-  const retryBtn = document.getElementById("retry-button");
 
   function showLayout(layoutToShow) {
     startLayout.style.display = "none";
@@ -25,35 +26,68 @@ document.addEventListener("DOMContentLoaded", () => {
   // init score
   let score = 0;
   let questionCount = 1;
+  let currentQuestion = null;
 
   // Show start-layout at the beginning
   showLayout(startLayout);
 
-  startBtn.addEventListener("click", async () => {
-    showLayout(quizLayout);
-    // generate a question
-    // const question = await generateQuestion();
-    // // populate the question on the page
-    // populateQuestion(question);
-  });
-
-  function handleAnswer(answer) {
-    // needs to check if anwser is correct
-    // if correct, add to score
-    // show whether it is correct or not
-    // if incorrect, do nothing
-    // then generate a new question
-    // populate the question on the page
-    // update the score on the page
+  // a function for generating and displaying the next question
+  async function nextQuestion() {
+    const question = await generateQuestion();
+    currentQuestion = question;
+    populateQuestion(question, questionCount);
   }
 
+  // User starts the quiz
+  startBtn.addEventListener("click", async () => {
+    await nextQuestion();
+    showLayout(quizLayout);
+  });
+
+  // handle question answer
   quizBtns.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      showLayout(endLayout);
+    btn.addEventListener("click", (event) => {
+      // get the index of the users chosen answer
+      const answerIndex = Number(event.target.dataset.answerIndex);
+      const correctAnswerIndex = currentQuestion.options.indexOf(
+        currentQuestion.answer
+      );
+      const isAnswerCorrect = correctAnswerIndex === answerIndex;
+
+      if (isAnswerCorrect) {
+        // add 'correct' class to button
+        event.target.classList.add("correct");
+        // add 'correct' message to the page
+        answerFeedbackElement.textContent = "Correct!!";
+        answerFeedbackElement.style.color = "green";
+        score++;
+      } else {
+        // add 'wrong' class to button
+        event.target.classList.add("wrong");
+        // add correct class to the correct answer button
+        quizBtns[correctAnswerIndex].classList.add("correct");
+        // add 'wrong' message to the page
+        answerFeedbackElement.textContent = "Wrong!!";
+        answerFeedbackElement.style.color = "red";
+      }
+      questionCount++;
+
+      // wait 3 seconds before showing the next question
+      setTimeout(() => {
+        if (questionCount <= 10) {
+          nextQuestion();
+        } else {
+          showLayout(endLayout);
+          showScorePage(score);
+        }
+      }, 3000);
     });
   });
 
   retryBtn.addEventListener("click", () => {
-    showLayout(quizLayout);
+    // reset quiz
+    score = 0;
+    questionCount = 1;
+    showLayout(startLayout);
   });
 });
