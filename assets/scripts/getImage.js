@@ -8,19 +8,19 @@ export async function getImage(breed, animalType) {
   // this is a temporary return value, so that we don't use up our API quota in development
   return "https://api-ninjas.com/images/cats/american_bobtail.jpg";
 
-  //   try {
-  //     const response = await fetch(
-  //       `https://api.api-ninjas.com/v1/${animalType || "cats"}?name=${breed}`,
-  //       {
-  //         method: "GET",
-  //         headers: { "X-Api-Key": "QkOFImsO+WmexRiuHPMVVg==uQTYrf9KNw6WoWNL" },
-  //         contentType: "application/json",
-  //       }
-  //     );
-  //     const data = await response.json();
-  //     return data[0].image_link;
-  //   } catch (error) {
-  //     console.error("Error: ", error);
-  //     return null;
-  //   }
+  // try {
+  //   const response = await fetch(
+  //     `https://api.api-ninjas.com/v1/${animalType || "cats"}?name=${breed}`,
+  //     {
+  //       method: "GET",
+  //       headers: { "X-Api-Key": "QkOFImsO+WmexRiuHPMVVg==uQTYrf9KNw6WoWNL" },
+  //       contentType: "application/json",
+  //     }
+  //   );
+  //   const data = await response.json();
+  //   return data[0].image_link;
+  // } catch (error) {
+  //   console.error("Error: ", error);
+  //   return null;
+  // }
 }
