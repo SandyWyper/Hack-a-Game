@@ -1,123 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cat Quiz</title>
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="assets/images/favicon-16x16.png"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
-      crossorigin="anonymous"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
-      rel="stylesheet"
-    />
-    <script
-      src="https://kit.fontawesome.com/a3ffa70fd5.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="assets/style.css" />
 
-    <script src="./assets/scripts/index.js" defer type="module"></script>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cat Quiz</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-16x16.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
+    rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a3ffa70fd5.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="assets/style.css" />
 
-  <body>
-    <div class="app-wrapper">
-      <div class="start-layout" id="start-layout">
-        <div class="start-wrapper">
-          <div class="cat-dog-toggle-wrapper">Toggle between cat and dog</div>
-          <h1 class="title">Cat Quiz</h1>
-          <p class="description">
-            Test your knowledge of cats and dogs with this quiz!
-          </p>
-          <div class="start-image-wrapper">
-            <img
-              src="assets/images/hero.png"
-              alt="image"
-              width="300"
-              height="300"
-              loading="eager"
-            />
+  <script src="./assets/scripts/index.js" defer type="module"></script>
+</head>
+
+<body>
+  <div class="app-wrapper">
+    <!-- Adding spinner -->
+    <div id="spinner-overlay"
+      style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(255,255,255,0.7); z-index:9999; justify-content:center; align-items:center;">
+      <div class="spinner-border text-primary" role="status" style="width: 4rem; height: 4rem;">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+    <div class="start-layout" id="start-layout">
+      <div class="start-wrapper">
+        <h1 class="title">Cat Quiz</h1>
+        <div style="text-align: center;">
+          <div class="cat-dog-toggle-wrapper">
+            Toggle between cat and dog
           </div>
-          <button type="button" id="start-button" class="start-button">
-            Start
+        </div>
+        <p class="description">
+          Test your knowledge of cats and dogs with this quiz!
+        </p>
+        <div class="start-image-wrapper">
+          <img src="assets/images/hero.png" alt="image" width="300" height="300" loading="eager" />
+        </div>
+        <button type="button" id="start-button" class="start-button">
+          Start
+        </button>
+      </div>
+    </div>
+    <div class="quiz-layout" id="quiz-layout">
+      <div class="quiz-wrapper">
+        <h2 class="question" id="question-title">
+          Question <span id="question-count"></span>
+        </h2>
+        <div class="question-image-wrapper">
+          <img id="question-image" src="https://picsum.photos/300/300" alt="image" width="300" height="300" />
+        </div>
+        <div class="answers-wrapper">
+          <button class="answer-button" data-answer-index="0">
+            Option 1
+          </button>
+          <button class="answer-button" data-answer-index="1">
+            Option 2
+          </button>
+          <button class="answer-button" data-answer-index="2">
+            Option 3
+          </button>
+        </div>
+        <div class="answer-feedback-wrapper">
+          <p class="answer-feedback-text" id="answer-feedback-text"></p>
+        </div>
+      </div>
+    </div>
+    <div class="end-layout" id="end-layout">
+      <div class="end-wrapper">
+        <div class="result-image-wrapper">
+          <img src="https://picsum.photos/200/300" alt="image" width="200" height="300" />
+        </div>
+        <h2 class="result-title">Result</h2>
+        <p class="result-description" id="result-description">Description</p>
+        <div class="score-wrapper">
+          <p class="score-title">Score</p>
+          <p class="score-value" id="score-value"></p>
+        </div>
+        <div class="retry-button-wrapper">
+          <button type="button" id="retry-button" class="retry-button">
+            Retake quiz
           </button>
         </div>
       </div>
-      <div class="quiz-layout" id="quiz-layout">
-        <div class="quiz-wrapper">
-          <h2 class="question" id="question-title">
-            Question <span id="question-count"></span>
-          </h2>
-          <div class="question-image-wrapper">
-            <img
-              id="question-image"
-              src="https://picsum.photos/300/300"
-              alt="image"
-              width="300"
-              height="300"
-            />
-          </div>
-          <div class="answers-wrapper">
-            <button class="answer-button" data-answer-index="0">
-              Option 1
-            </button>
-            <button class="answer-button" data-answer-index="1">
-              Option 2
-            </button>
-            <button class="answer-button" data-answer-index="2">
-              Option 3
-            </button>
-          </div>
-          <div class="answer-feedback-wrapper">
-            <p class="answer-feedback-text" id="answer-feedback-text"></p>
-          </div>
-        </div>
-      </div>
-      <div class="end-layout" id="end-layout">
-        <div class="end-wrapper">
-          <div class="result-image-wrapper">
-            <img
-              src="https://picsum.photos/200/300"
-              alt="image"
-              width="200"
-              height="300"
-            />
-          </div>
-          <h2 class="result-title">Result</h2>
-          <p class="result-description" id="result-description">Description</p>
-          <div class="score-wrapper">
-            <p class="score-title">Score</p>
-            <p class="score-value" id="score-value"></p>
-          </div>
-          <div class="retry-button-wrapper">
-            <button type="button" id="retry-button" class="retry-button">
-              Retake quiz
-            </button>
-          </div>
-        </div>
-      </div>
-      <footer>
-        <i class="fa-brands fa-facebook-f"></i>
-        <i class="fa-brands fa-instagram"></i>
-        <i class="fa-brands fa-x-twitter"></i>
-        <p class="ms-auto">© Cat Quiz, 2025. All rights reserved.</p>
-      </footer>
     </div>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+    <footer>
+      <i class="fa-brands fa-facebook-f"></i>
+      <i class="fa-brands fa-instagram"></i>
+      <i class="fa-brands fa-x-twitter"></i>
+      <p class="ms-auto">© Cat Quiz, 2025. All rights reserved.</p>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>

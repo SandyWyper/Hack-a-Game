@@ -11,6 +11,13 @@ import {
   answerFeedbackElement,
 } from "./elementRefs.js";
 
+function showSpinner() {
+  document.getElementById('spinner-overlay').style.display = 'flex';
+}
+function hideSpinner() {
+  document.getElementById('spinner-overlay').style.display = 'none';
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   // console.log(cats, dogs, "cats and dogs");
   // console.log(getImage("breed", "cats"), "getImage");
@@ -40,8 +47,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // User starts the quiz
   startBtn.addEventListener("click", async () => {
+    showSpinner();
     await nextQuestion();
     showLayout(quizLayout);
+    hideSpinner();
   });
 
   // handle question answer
@@ -71,18 +80,22 @@ document.addEventListener("DOMContentLoaded", () => {
         answerFeedbackElement.style.color = "red";
       }
       questionCount++;
-
-      // wait 3 seconds before showing the next question
-      setTimeout(() => {
+        // Show feedback for 1 second, then show spinner for 2 seconds
+    setTimeout(() => {
+      showSpinner();
+      setTimeout(async () => {
         if (questionCount <= 10) {
-          nextQuestion();
+          await nextQuestion();
+          hideSpinner();
         } else {
           showLayout(endLayout);
           showScorePage(score);
+          hideSpinner();
         }
-      }, 3000);
-    });
+      }, 2000); // spinner shows for 2 seconds
+    }, 1000); // feedback shows for 1 second before spinner
   });
+});
 
   retryBtn.addEventListener("click", () => {
     // reset quiz

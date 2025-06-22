@@ -21,6 +21,7 @@ p {
   border-radius: 5px;
   width: 100%;
 }
+
 .answer-button {
   margin-bottom: 10px;
   padding: 10px;
@@ -28,6 +29,7 @@ p {
   border: 1px solid #000;
   width: 100%;
 }
+
 .retry-button {
   font-size: 1.2rem;
   padding: 10px;
@@ -35,9 +37,11 @@ p {
   border-radius: 5px;
   width: 100%;
 }
+
 .answer-button.correct {
   background-color: #00ff00;
 }
+
 .answer-button.wrong {
   background-color: #ff0000;
 }
@@ -48,6 +52,7 @@ p {
   flex-direction: column;
   align-items: center;
 }
+
 .start-layout,
 .quiz-layout,
 .end-layout {
@@ -65,9 +70,11 @@ p {
 }
 
 .cat-dog-toggle-wrapper {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
+
+
+  display: inline-block;
+
+  margin-bottom: 1rem;
   padding: 6px;
   border-radius: 5px;
   background-color: #000;
@@ -77,14 +84,17 @@ p {
 .start-image-wrapper {
   margin-bottom: 2rem;
 }
+
 .start-image-wrapper img {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
+
 .question-image-wrapper {
   margin-bottom: 2rem;
 }
+
 .question-image-wrapper img {
   width: auto;
   object-fit: contain;
@@ -115,12 +125,12 @@ footer {
   color: #555;
 }
 
-footer > p {
+footer>p {
   color: white;
   font-size: 13px;
 }
 
-footer > i {
+footer>i {
   color: white;
   text-align: left;
 }
