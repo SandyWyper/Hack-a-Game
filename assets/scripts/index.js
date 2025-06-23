@@ -91,7 +91,6 @@ document.addEventListener("DOMContentLoaded", () => {
         answerFeedbackElement.style.color = "red";
       }
       questionCount++;
-      // Show feedback for 1 second, then show spinner for 2 seconds
 
       setTimeout(async () => {
         if (questionCount <= 10) {
