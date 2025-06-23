@@ -9,13 +9,14 @@ import {
   quizBtns,
   retryBtn,
   answerFeedbackElement,
+  catDogToggle,
 } from "./elementRefs.js";
 
 function showSpinner() {
-  document.getElementById('spinner-overlay').style.display = 'flex';
+  document.getElementById("spinner-overlay").style.display = "flex";
 }
 function hideSpinner() {
-  document.getElementById('spinner-overlay').style.display = 'none';
+  document.getElementById("spinner-overlay").style.display = "none";
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -34,13 +35,22 @@ document.addEventListener("DOMContentLoaded", () => {
   let score = 0;
   let questionCount = 1;
   let currentQuestion = null;
+  let animalType = "cats";
+
+  catDogToggle.addEventListener("change", () => {
+    if (catDogToggle.checked) {
+      animalType = "dogs";
+    } else {
+      animalType = "cats";
+    }
+  });
 
   // Show start-layout at the beginning
   showLayout(startLayout);
 
   // a function for generating and displaying the next question
   async function nextQuestion() {
-    const question = await generateQuestion();
+    const question = await generateQuestion(animalType);
     currentQuestion = question;
     populateQuestion(question, questionCount);
   }
@@ -80,22 +90,22 @@ document.addEventListener("DOMContentLoaded", () => {
         answerFeedbackElement.style.color = "red";
       }
       questionCount++;
-        // Show feedback for 1 second, then show spinner for 2 seconds
-    setTimeout(() => {
-      showSpinner();
-      setTimeout(async () => {
-        if (questionCount <= 10) {
-          await nextQuestion();
-          hideSpinner();
-        } else {
-          showLayout(endLayout);
-          showScorePage(score);
-          hideSpinner();
-        }
-      }, 2000); // spinner shows for 2 seconds
-    }, 1000); // feedback shows for 1 second before spinner
+      // Show feedback for 1 second, then show spinner for 2 seconds
+      setTimeout(() => {
+        showSpinner();
+        setTimeout(async () => {
+          if (questionCount <= 2) {
+            await nextQuestion();
+            hideSpinner();
+          } else {
+            showLayout(endLayout);
+            showScorePage(score);
+            hideSpinner();
+          }
+        }, 2000); // spinner shows for 2 seconds
+      }, 1000); // feedback shows for 1 second before spinner
+    });
   });
-});
 
   retryBtn.addEventListener("click", () => {
     // reset quiz

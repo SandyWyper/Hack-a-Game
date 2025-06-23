@@ -10,3 +10,4 @@ export const answerFeedbackElement = document.getElementById(
 );
 export const questionCountElement = document.getElementById("question-count");
 export const scoreElement = document.getElementById("score-value");
+export const catDogToggle = document.getElementById("cat-dog-toggle");
