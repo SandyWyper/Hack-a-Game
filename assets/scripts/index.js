@@ -89,19 +89,15 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       questionCount++;
       // Show feedback for 1 second, then show spinner for 2 seconds
-      setTimeout(() => {
-        showSpinner();
-        setTimeout(async () => {
-          if (questionCount <= 2) {
-            await nextQuestion();
-            hideSpinner();
-          } else {
-            showLayout(endLayout);
-            showScorePage(score);
-            hideSpinner();
-          }
-        }, 2000); // spinner shows for 2 seconds
-      }, 1000); // feedback shows for 1 second before spinner
+
+      setTimeout(async () => {
+        if (questionCount <= 2) {
+          await nextQuestion();
+        } else {
+          showLayout(endLayout);
+          showScorePage(score);
+        }
+      }, 2000); // spinner shows for 2 seconds
     });
   });
 

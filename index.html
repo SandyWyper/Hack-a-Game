@@ -91,11 +91,9 @@
           </div>
         </div>
       </div>
+
       <div class="quiz-layout" id="quiz-layout">
         <div class="quiz-wrapper">
-          <h2 class="question" id="question-title">
-            Question <span id="question-count"></span>
-          </h2>
           <div class="question-image-wrapper">
             <img
               id="question-image"
@@ -105,22 +103,28 @@
               height="300"
             />
           </div>
-          <div class="answers-wrapper">
-            <button class="answer-button" data-answer-index="0">
-              Option 1
-            </button>
-            <button class="answer-button" data-answer-index="1">
-              Option 2
-            </button>
-            <button class="answer-button" data-answer-index="2">
-              Option 3
-            </button>
-          </div>
-          <div class="answer-feedback-wrapper">
-            <p class="answer-feedback-text" id="answer-feedback-text"></p>
+          <div class="quiz-content-wrapper">
+            <h2 class="question-title" id="question-title">
+              Question <span id="question-count"></span>
+            </h2>
+            <div class="answers-wrapper">
+              <button class="answer-button" data-answer-index="0">
+                Option 1
+              </button>
+              <button class="answer-button" data-answer-index="1">
+                Option 2
+              </button>
+              <button class="answer-button" data-answer-index="2">
+                Option 3
+              </button>
+            </div>
+            <div class="answer-feedback-wrapper">
+              <p class="answer-feedback-text" id="answer-feedback-text"></p>
+            </div>
           </div>
         </div>
       </div>
+
       <div class="end-layout" id="end-layout">
         <div class="end-wrapper">
           <div class="result-image-wrapper">
