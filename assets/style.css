@@ -20,39 +20,6 @@ p {
   font-family: "Roboto flex", sans-serif;
 }
 
-/* buttons */
-.start-button {
-  font-size: 1.2rem;
-  padding: 10px;
-  font-family: "Londrina Solid", sans-serif;
-  border-radius: 5px;
-  width: 100%;
-}
-
-.answer-button {
-  margin-bottom: 10px;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #000;
-  width: 100%;
-}
-
-.retry-button {
-  font-size: 1.2rem;
-  padding: 10px;
-  font-family: "Londrina Solid", sans-serif;
-  border-radius: 5px;
-  width: 100%;
-}
-
-.button.correct {
-  background-color: #00ff00;
-}
-
-.button.wrong {
-  background-color: #ff0000;
-}
-
 /* layout */
 .app-wrapper {
   display: flex;
@@ -267,6 +234,13 @@ footer > i {
   text-align: right;
   font-size: 1.2rem;
   /* color: white; */
+}
+.butt-secondary.correct {
+  border-color: #0bad0b;
+}
+
+.butt-secondary.wrong {
+  background-color: #ffd1d1;
 }
 @media (min-width: 990px) {
   .start-layout,

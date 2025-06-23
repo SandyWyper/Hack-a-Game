@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // init score
-  let score = 7;
+  let score = 0;
   let questionCount = 1;
   let currentQuestion = null;
   let animalType = "cats";
@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Show feedback for 1 second, then show spinner for 2 seconds
 
       setTimeout(async () => {
-        if (questionCount <= 1) {
+        if (questionCount <= 10) {
           await nextQuestion();
         } else {
           showLayout(endLayout);
