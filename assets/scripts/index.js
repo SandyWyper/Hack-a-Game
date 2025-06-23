@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // init score
-  let score = 0;
+  let score = 7;
   let questionCount = 1;
   let currentQuestion = null;
   let animalType = "cats";

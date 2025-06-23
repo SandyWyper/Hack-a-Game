@@ -45,11 +45,11 @@ p {
   width: 100%;
 }
 
-.answer-button.correct {
+.button.correct {
   background-color: #00ff00;
 }
 
-.answer-button.wrong {
+.button.wrong {
   background-color: #ff0000;
 }
 
@@ -114,6 +114,7 @@ p {
 .start-image-wrapper img,
 .question-image-wrapper img,
 .result-image-wrapper img {
+  max-height: calc(100vh - 60px);
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -133,7 +134,10 @@ p {
   margin: 10px 0;
 }
 .answer-feedback-wrapper {
-  height: 100px;
+  height: 50px;
+  max-width: 250px;
+  width: 100%;
+  margin-inline: auto;
 }
 .result-title {
   font-size: 3rem;
@@ -141,7 +145,8 @@ p {
   color: var(--animal-color);
   text-align: center;
 }
-.result-description {
+.result-description,
+.description {
   font-size: 1.5rem;
   font-weight: 600;
   /* color: var(--animal-color); */
@@ -193,7 +198,76 @@ footer > i {
   margin-inline-end: 1rem;
   text-align: left;
 }
+.spinner-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.7);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+}
+.spinner-border {
+  width: 4rem;
+  height: 4rem;
+  color: var(--animal-color);
+}
 
+/* buttons */
+.butt-primary {
+  background-color: var(--animal-color);
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  width: 250px;
+  margin-inline: auto;
+  font-family: "Londrina Solid", sans-serif;
+  display: block;
+  font-size: 1.3rem;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
+  margin-block-end: 1rem;
+}
+.butt-primary:hover {
+  outline: 1px solid var(--animal-color);
+  outline-offset: 2px;
+  filter: brightness(1.1);
+}
+
+.butt-secondary {
+  color: var(--animal-color);
+  background-color: white;
+  border: 2px solid var(--animal-color);
+  padding: 10px;
+  border-radius: 5px;
+  width: 250px;
+  margin-inline: auto;
+  font-family: "Londrina Solid", sans-serif;
+  display: block;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+.butt-secondary:hover {
+  background-color: #eeeeee;
+  /* color: white; */
+}
+.answers-wrapper .butt-secondary {
+  text-align: left;
+  font-family: "Roboto flex", sans-serif;
+  font-weight: 500;
+  /* color: white; */
+}
+
+.answer-feedback-text {
+  font-family: "Londrina Solid", sans-serif;
+  font-weight: 500;
+  text-align: right;
+  font-size: 1.2rem;
+  /* color: white; */
+}
 @media (min-width: 990px) {
   .start-layout,
   .quiz-layout,
@@ -220,6 +294,7 @@ footer > i {
   .end-content-wrapper,
   .start-title-wrapper-container {
     margin-inline: auto;
+    max-width: 400px;
   }
   .quiz-layout {
     flex-direction: row;

@@ -34,26 +34,8 @@
   <body>
     <div class="app-wrapper">
       <!-- Adding spinner -->
-      <div
-        id="spinner-overlay"
-        style="
-          display: none;
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100vw;
-          height: 100vh;
-          background: rgba(255, 255, 255, 0.7);
-          z-index: 9999;
-          justify-content: center;
-          align-items: center;
-        "
-      >
-        <div
-          class="spinner-border text-primary"
-          role="status"
-          style="width: 4rem; height: 4rem"
-        >
+      <div id="spinner-overlay" class="spinner-overlay">
+        <div class="spinner-border" role="status">
           <span class="visually-hidden">Loading...</span>
         </div>
       </div>
@@ -85,7 +67,7 @@
             <p class="description">
               Test your knowledge of cats and dogs with this quiz!
             </p>
-            <button type="button" id="start-button" class="start-button">
+            <button type="button" id="start-button" class="butt-primary">
               Start
             </button>
           </div>
@@ -97,7 +79,7 @@
           <div class="question-image-wrapper">
             <img
               id="question-image"
-              src="https://picsum.photos/300/300"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg=="
               alt="image"
               width="300"
               height="300"
@@ -108,13 +90,13 @@
               Question <span id="question-count"></span>
             </h2>
             <div class="answers-wrapper">
-              <button class="answer-button" data-answer-index="0">
+              <button class="butt-secondary" data-answer-index="0">
                 Option 1
               </button>
-              <button class="answer-button" data-answer-index="1">
+              <button class="butt-secondary" data-answer-index="1">
                 Option 2
               </button>
-              <button class="answer-button" data-answer-index="2">
+              <button class="butt-secondary" data-answer-index="2">
                 Option 3
               </button>
             </div>
@@ -130,10 +112,10 @@
           <div class="result-image-wrapper">
             <img
               id="result-image"
-              src="https://picsum.photos/200/300"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg=="
               alt="image"
-              width="200"
-              height="300"
+              width="600"
+              height="600"
             />
           </div>
           <div class="end-content-wrapper">
@@ -144,7 +126,7 @@
               <p class="score-value" id="score-value"></p>
             </div>
             <div class="retry-button-wrapper">
-              <button type="button" id="retry-button" class="retry-button">
+              <button type="button" id="retry-button" class="butt-primary">
                 Retake quiz
               </button>
             </div>
@@ -158,10 +140,5 @@
         <p class="ms-auto">© Cat Quiz, 2025. All rights reserved.</p>
       </footer>
     </div>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
-      crossorigin="anonymous"
-    ></script>
   </body>
 </html>

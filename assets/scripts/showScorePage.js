@@ -3,6 +3,7 @@ import {
   messageElement,
   resultImageElement,
 } from "./elementRefs.js";
+import { doConfetti } from "./confetti.js";
 
 export const showScorePage = (score) => {
   // show the score on the page
@@ -29,4 +30,9 @@ export const showScorePage = (score) => {
       ? "assets/images/neutral-cat.png"
       : "assets/images/happy-cat.png";
   resultImageElement.src = imageUrl;
+
+  // if score over 6 do confetti
+  if (score > 6) {
+    doConfetti();
+  }
 };

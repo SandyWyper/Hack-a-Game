@@ -21,7 +21,7 @@ export function toggleStartPageContent(animalType) {
     document.title = "Dog Quiz";
     // change the favicon for the page
     document.querySelector("link[rel='icon']").href =
-      "assets/images/favicon-16x16.png";
+      "assets/images/dog-favicon.png";
     // change the image for the quiz
     startImageElement.src = "assets/images/guess-pooch.png";
     // change the animal color variable
