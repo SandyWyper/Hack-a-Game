@@ -1,6 +1,7 @@
 import { generateQuestion } from "./generateQuestion.js";
 import { showScorePage } from "./showScorePage.js";
 import { populateQuestion } from "./populateQuestion.js";
+import { toggleStartPageContent } from "./toggleStartPageContent.js";
 import {
   startLayout,
   quizLayout,
@@ -9,13 +10,14 @@ import {
   quizBtns,
   retryBtn,
   answerFeedbackElement,
+  catDogToggle,
 } from "./elementRefs.js";
 
 function showSpinner() {
-  document.getElementById('spinner-overlay').style.display = 'flex';
+  document.getElementById("spinner-overlay").style.display = "flex";
 }
 function hideSpinner() {
-  document.getElementById('spinner-overlay').style.display = 'none';
+  document.getElementById("spinner-overlay").style.display = "none";
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -26,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     startLayout.style.display = "none";
     quizLayout.style.display = "none";
     endLayout.style.display = "none";
-    layoutToShow.style.display = "block";
+    layoutToShow.style.display = "flex";
     // Footer is always visible, so no need to toggle it
   }
 
@@ -34,13 +36,19 @@ document.addEventListener("DOMContentLoaded", () => {
   let score = 0;
   let questionCount = 1;
   let currentQuestion = null;
+  let animalType = "cats";
+
+  catDogToggle.addEventListener("change", () => {
+    catDogToggle.checked ? (animalType = "dogs") : (animalType = "cats");
+    toggleStartPageContent(animalType);
+  });
 
   // Show start-layout at the beginning
   showLayout(startLayout);
 
   // a function for generating and displaying the next question
   async function nextQuestion() {
-    const question = await generateQuestion();
+    const question = await generateQuestion(animalType);
     currentQuestion = question;
     populateQuestion(question, questionCount);
   }
@@ -80,22 +88,18 @@ document.addEventListener("DOMContentLoaded", () => {
         answerFeedbackElement.style.color = "red";
       }
       questionCount++;
-        // Show feedback for 1 second, then show spinner for 2 seconds
-    setTimeout(() => {
-      showSpinner();
+      // Show feedback for 1 second, then show spinner for 2 seconds
+
       setTimeout(async () => {
         if (questionCount <= 10) {
           await nextQuestion();
-          hideSpinner();
         } else {
           showLayout(endLayout);
           showScorePage(score);
-          hideSpinner();
         }
       }, 2000); // spinner shows for 2 seconds
-    }, 1000); // feedback shows for 1 second before spinner
+    });
   });
-});
 
   retryBtn.addEventListener("click", () => {
     // reset quiz
