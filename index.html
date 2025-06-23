@@ -59,21 +59,9 @@
       </div>
       <div class="start-layout" id="start-layout">
         <div class="start-wrapper">
-          <h1 class="title">Cat Quiz</h1>
-
-          <div class="toggle-button-cover">
-            <div id="button-3" class="button r">
-              <input class="checkbox" type="checkbox" id="cat-dog-toggle" />
-              <div class="knobs"></div>
-              <div class="layer"></div>
-            </div>
-          </div>
-
-          <p class="description">
-            Test your knowledge of cats and dogs with this quiz!
-          </p>
           <div class="start-image-wrapper">
             <img
+              id="start-image"
               src="assets/images/hero.png"
               alt="image"
               width="300"
@@ -81,9 +69,26 @@
               loading="eager"
             />
           </div>
-          <button type="button" id="start-button" class="start-button">
-            Start
-          </button>
+          <div class="start-title-wrapper-container">
+            <div class="start-title-wrapper">
+              <h1 id="title">Cat Quiz</h1>
+
+              <div class="toggle-button-cover">
+                <div id="button-3" class="button r">
+                  <input class="checkbox" type="checkbox" id="cat-dog-toggle" />
+                  <div class="knobs"></div>
+                  <div class="layer"></div>
+                </div>
+              </div>
+            </div>
+
+            <p class="description">
+              Test your knowledge of cats and dogs with this quiz!
+            </p>
+            <button type="button" id="start-button" class="start-button">
+              Start
+            </button>
+          </div>
         </div>
       </div>
       <div class="quiz-layout" id="quiz-layout">

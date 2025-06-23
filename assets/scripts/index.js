@@ -1,6 +1,7 @@
 import { generateQuestion } from "./generateQuestion.js";
 import { showScorePage } from "./showScorePage.js";
 import { populateQuestion } from "./populateQuestion.js";
+import { toggleStartPageContent } from "./toggleStartPageContent.js";
 import {
   startLayout,
   quizLayout,
@@ -27,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     startLayout.style.display = "none";
     quizLayout.style.display = "none";
     endLayout.style.display = "none";
-    layoutToShow.style.display = "block";
+    layoutToShow.style.display = "flex";
     // Footer is always visible, so no need to toggle it
   }
 
@@ -38,11 +39,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let animalType = "cats";
 
   catDogToggle.addEventListener("change", () => {
-    if (catDogToggle.checked) {
-      animalType = "dogs";
-    } else {
-      animalType = "cats";
-    }
+    catDogToggle.checked ? (animalType = "dogs") : (animalType = "cats");
+    toggleStartPageContent(animalType);
   });
 
   // Show start-layout at the beginning
