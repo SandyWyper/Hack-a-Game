@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Show feedback for 1 second, then show spinner for 2 seconds
 
       setTimeout(async () => {
-        if (questionCount <= 2) {
+        if (questionCount <= 1) {
           await nextQuestion();
         } else {
           showLayout(endLayout);

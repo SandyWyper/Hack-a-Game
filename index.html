@@ -129,22 +129,25 @@
         <div class="end-wrapper">
           <div class="result-image-wrapper">
             <img
+              id="result-image"
               src="https://picsum.photos/200/300"
               alt="image"
               width="200"
               height="300"
             />
           </div>
-          <h2 class="result-title">Result</h2>
-          <p class="result-description" id="result-description">Description</p>
-          <div class="score-wrapper">
-            <p class="score-title">Score</p>
-            <p class="score-value" id="score-value"></p>
-          </div>
-          <div class="retry-button-wrapper">
-            <button type="button" id="retry-button" class="retry-button">
-              Retake quiz
-            </button>
+          <div class="end-content-wrapper">
+            <h2 class="result-title">Result</h2>
+            <p class="result-description" id="score-message">Message</p>
+            <div class="score-wrapper">
+              <p class="score-title">Score:</p>
+              <p class="score-value" id="score-value"></p>
+            </div>
+            <div class="retry-button-wrapper">
+              <button type="button" id="retry-button" class="retry-button">
+                Retake quiz
+              </button>
+            </div>
           </div>
         </div>
       </div>
