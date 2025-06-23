@@ -64,6 +64,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // handle question answer
   quizBtns.forEach((btn) => {
     btn.addEventListener("click", (event) => {
+      quizBtns.forEach((btn) => {
+        btn.disabled = true;
+      });
       // get the index of the users chosen answer
       const answerIndex = Number(event.target.dataset.answerIndex);
       const correctAnswerIndex = currentQuestion.options.indexOf(
@@ -88,11 +91,13 @@ document.addEventListener("DOMContentLoaded", () => {
         answerFeedbackElement.style.color = "red";
       }
       questionCount++;
-      // Show feedback for 1 second, then show spinner for 2 seconds
 
       setTimeout(async () => {
         if (questionCount <= 10) {
           await nextQuestion();
+          quizBtns.forEach((btn) => {
+            btn.disabled = false;
+          });
         } else {
           showLayout(endLayout);
           showScorePage(score);
