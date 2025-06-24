@@ -1,11 +1,12 @@
 # Hack-a-Game
+
 Our first hack-a-thon for the Code Institute
 
 ## Collaborators
 
 Working together on this project was a highly rewarding experience for all of us. We enjoyed collaborating, sharing ideas, and learning from each other. One of the biggest lessons we learned was the challenge of coordinating Git across a team. Ensuring that everyone was on the same page and managing merge conflicts required effective communication and organization. This experience has significantly improved our teamwork and version control skills.
 
-- [Sandy](https://github.com/SandyWyper) - Lead 
+- [Sandy](https://github.com/SandyWyper) - Lead
 - [Beth](https://github.com/SandyWyper) need to change a link
 - [Marijonas](https://github.com/Marso22)
 - [Dallow](https://github.com/SandyWyper) need to change a link
@@ -14,17 +15,25 @@ Working together on this project was a highly rewarding experience for all of us
 
 ### Languages Used
 
--   [HTML5](https://en.wikipedia.org/wiki/HTML5)
--   [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
--   [JavaScript ES6](https://en.wikipedia.org/wiki/JavaScript)
+- [HTML5](https://en.wikipedia.org/wiki/HTML5)
+- [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+- [JavaScript ES6](https://en.wikipedia.org/wiki/JavaScript)
 
 ### Frameworks, Libraries & Programs Used
 
--   [Google Fonts:] (https://fonts.google.com/) was used to import the ... fonts into the style.css file which are used on all pages of the project.
--   [Font Awesome:](https://fontawesome.com/) was used to add icons for aesthetic and UX purposes.
--   [Git:](https://git-scm.com/) was used for version control by utilising the Gitpod terminal to commit to Git and Push to GitHub.
--   [GitHub:](https://github.com/) is used as the respository for the projects code after being pushed from Git.
--   [favicon:](https://favicon.io/) was used for creating website logo icons.
+- [Google Fonts:] (https://fonts.google.com/) was used to import the ... fonts into the style.css file which are used on all pages of the project.
+- [Font Awesome:](https://fontawesome.com/) was used to add icons for aesthetic and UX purposes.
+- [Git:](https://git-scm.com/) was used for version control by utilising the Gitpod terminal to commit to Git and Push to GitHub.
+- [GitHub:](https://github.com/) is used as the respository for the projects code after being pushed from Git.
+- [favicon:](https://favicon.io/) was used for creating website logo icons.
+
+### JavaScript Summary
+
+This is a modular vanilla JavaScript quiz game about cat and dog breeds. The main game logic in `index.js` orchestrates a 10-question quiz where users can toggle between cats and dogs, with each question displaying breed images and multiple choice answers. The game tracks scores, provides immediate feedback on answers, and shows a final score page with confetti effects for celebration.
+
+The project uses ES6 modules to organise functionality across multiple JavaScript files. Core modules include question generation `generateQuestion.js`, UI population `populateQuestion.js`, layout management `toggleStartPageContent.js`, `showScorePage.js`, fetching an image from an API `getImage.js`, DOM element references `elementRefs.js`, and game data `catsndogs.js` containing arrays of cat and dog breed names. The game flow progresses from start screen → quiz questions → score display with retry functionality.
+
+**External Dependencies:** The project uses one external library - @tsparticles/confetti (v3.0.3) loaded via CDN for the confetti celebration effects. All other functionality is implemented with vanilla JavaScript and DOM manipulation. The cat and dog images are fetched from (API Ninjas)[https://api-ninjas.com/] for every question. We have around 70 cat breeds, and 100 dog breeds. Each breed returns a different image from the API.
 
 ## AI Augmented FullStack Bootcamp
 
