@@ -13,6 +13,34 @@ Working together on this project was a highly rewarding experience for all of us
 
 ## Technologies Used
 
+## Design and User Experience (UX)
+
+The Cat Quiz website was designed with a playful yet intuitive user experience in mind, aimed at engaging users of all ages—especially cat lovers! The layout is clean and responsive, ensuring accessibility across devices from mobile to desktop.
+
+## Visual Design
+
+Color Palette: The design embraces a vibrant and cheerful aesthetic, featuring warm yellows and oranges that echo the playful energy of cats. These are paired with black fonts for strong contrast and easy readability across devices.
+
+Typography: Clear, legible fonts support easy reading, with distinct styles used to separate headings, body text, and buttons.
+
+Imagery: Real cat images were used throughout the quiz to boost engagement and provide visual delight.
+
+## User Flow
+
+Home Page: Welcomes users and provides a clear call-to-action to start the quiz.
+
+Quiz Navigation: Users move through a series of questions with immediate visual feedback on their selections.
+
+Results Page: Provides a summary of the user’s performance, along with a fun message to keep the tone light and encouraging.
+
+## UX Principles
+
+Accessibility: Buttons are large and color contrast meets basic accessibility guidelines.
+
+Responsiveness: The site adapts seamlessly to various screen sizes using modern CSS techniques.
+
+Simplicity: Navigation is minimal and intuitive, so users can enjoy the quiz without distraction.
+
 ### Languages Used
 
 - [HTML5](https://en.wikipedia.org/wiki/HTML5)
