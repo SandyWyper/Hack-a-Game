@@ -13,6 +13,13 @@ Working together on this project was a highly rewarding experience for all of us
 
 ## Technologies Used
 
+## Wireframes
+
+Before beginning the project, initial wireframes were designed to map out the final product. These included both mobile and desktop versions.
+
+![wireframe for phone](assets/images/phone-wireframe.png)
+![wireframe for desktop](assets/images/desktop-wireframe.png)
+
 ## Design and User Experience (UX)
 
 The Cat Quiz website was designed with a playful yet intuitive user experience in mind, aimed at engaging users of all ages—especially cat lovers! The layout is clean and responsive, ensuring accessibility across devices from mobile to desktop.
