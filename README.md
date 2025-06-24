@@ -73,7 +73,7 @@ This is a modular vanilla JavaScript quiz game about cat and dog breeds. The mai
 
 The project uses ES6 modules to organise functionality across multiple JavaScript files. Core modules include question generation `generateQuestion.js`, UI population `populateQuestion.js`, layout management `toggleStartPageContent.js`, `showScorePage.js`, fetching an image from an API `getImage.js`, DOM element references `elementRefs.js`, and game data `catsndogs.js` containing arrays of cat and dog breed names. The game flow progresses from start screen → quiz questions → score display with retry functionality.
 
-**External Dependencies:** The project uses one external library - @tsparticles/confetti (v3.0.3) loaded via CDN for the confetti celebration effects. All other functionality is implemented with vanilla JavaScript and DOM manipulation. The cat and dog images are fetched from (API Ninjas)[https://api-ninjas.com/] for every question. We have around 70 cat breeds, and 100 dog breeds. Each breed returns a different image from the API.
+**External Dependencies:** The project uses one external library - @tsparticles/confetti (v3.0.3) loaded via CDN for the confetti celebration effects. All other functionality is implemented with vanilla JavaScript and DOM manipulation. The cat and dog images are fetched from [API Ninjas](https://api-ninjas.com/) for every question. We have around 70 cat breeds, and 100 dog breeds. Each breed returns a different image from the API.
 
 ## AI Augmented FullStack Bootcamp
 
