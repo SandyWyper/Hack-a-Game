@@ -116,7 +116,6 @@ p {
 .description {
   font-size: 1.5rem;
   font-weight: 600;
-  /* color: var(--animal-color); */
   text-align: center;
 }
 
@@ -126,17 +125,12 @@ p {
   justify-content: center;
 }
 .score-title {
-  /* font-family: "Londrina Solid", sans-serif; */
   font-size: 1.5rem;
-  /* color: var(--animal-color); */
-  /* text-align: center; */
   font-weight: 900;
   text-transform: uppercase;
   margin-inline-end: 1rem;
 }
 .score-value {
-  /* color: var(--animal-color); */
-  /* font-family: "Londrina Solid", sans-serif; */
   font-size: 1.5rem;
   font-weight: 900;
 }
@@ -150,7 +144,6 @@ footer {
   background-color: black;
   color: white;
   height: 60px;
-  /* margin-top: 40px; */
   font-size: 1em;
   color: #555;
 }
@@ -219,13 +212,12 @@ footer > i {
 }
 .butt-secondary:hover {
   background-color: #eeeeee;
-  /* color: white; */
 }
+
 .answers-wrapper .butt-secondary {
   text-align: left;
   font-family: "Roboto flex", sans-serif;
   font-weight: 500;
-  /* color: white; */
 }
 
 .answer-feedback-text {
@@ -233,7 +225,6 @@ footer > i {
   font-weight: 500;
   text-align: right;
   font-size: 1.2rem;
-  /* color: white; */
 }
 .butt-secondary.correct {
   border-color: #0bad0b;
@@ -273,13 +264,24 @@ footer > i {
   .quiz-layout {
     flex-direction: row;
   }
-  .question-image-wrapper {
-    width: 60%;
-  }
+
   .question-image-wrapper img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+  }
+  .question-image-wrapper {
+    width: 60%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 2.5rem;
+  }
+  .question-image-wrapper.cat {
+    background-image: url("./images/cat-pattern.png");
+  }
+  .question-image-wrapper.dog {
+    background-image: url("./images/dog-pattern.png");
   }
 }
 
