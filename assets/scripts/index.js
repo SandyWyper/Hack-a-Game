@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // a function for generating and displaying the next question
   async function nextQuestion() {
-    const question = await generateQuestion(animalType, correctAnswers);
+    let question = await generateQuestion(animalType, correctAnswers);
     while (correctAnswers.includes(question.answer)) {
       question = await generateQuestion(animalType, correctAnswers);
     }
