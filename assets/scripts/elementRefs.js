@@ -11,6 +11,9 @@ export const quizBtns = document.querySelectorAll("[data-answer-index]");
 export const answerFeedbackElement = document.getElementById(
   "answer-feedback-text"
 );
+export const questionImageWrapper = document.getElementById(
+  "question-image-wrapper"
+);
 // results layout
 export const endLayout = document.getElementById("end-layout");
 export const scoreElement = document.getElementById("score-value");

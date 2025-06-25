@@ -1,4 +1,8 @@
-import { titleElement, startImageElement } from "./elementRefs.js";
+import {
+  titleElement,
+  startImageElement,
+  questionImageWrapper,
+} from "./elementRefs.js";
 
 export function toggleStartPageContent(animalType) {
   if (animalType === "cats") {
@@ -15,6 +19,9 @@ export function toggleStartPageContent(animalType) {
       "--animal-color",
       "var(--cat-color)"
     );
+    // change question background image
+    questionImageWrapper.classList.add("cat");
+    questionImageWrapper.classList.remove("dog");
   } else {
     titleElement.innerHTML = "Dog Quiz";
     // change the meta title for the page
@@ -29,5 +36,8 @@ export function toggleStartPageContent(animalType) {
       "--animal-color",
       "var(--dog-color)"
     );
+    // change question background image
+    questionImageWrapper.classList.add("dog");
+    questionImageWrapper.classList.remove("cat");
   }
 }

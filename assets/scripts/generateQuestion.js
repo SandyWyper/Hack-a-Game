@@ -29,6 +29,7 @@ export async function generateQuestion(animalType) {
   };
 }
 
+// Shuffle function to shuffle the options
 function shuffle(array) {
   const result = array.slice(); // make a copy
   for (let i = result.length - 1; i > 0; i--) {
