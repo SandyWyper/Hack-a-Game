@@ -33,6 +33,7 @@ p {
 .end-layout {
   width: 100%;
   min-height: calc(100vh - 60px);
+   max-height: calc(100vh - 60px);
   justify-content: center;
 }
 .start-wrapper,
