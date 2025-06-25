@@ -37,6 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let questionCount = 1;
   let currentQuestion = null;
   let animalType = "cats";
+  let correctAnswers = [];
 
   catDogToggle.addEventListener("change", () => {
     catDogToggle.checked ? (animalType = "dogs") : (animalType = "cats");
@@ -48,7 +49,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // a function for generating and displaying the next question
   async function nextQuestion() {
-    const question = await generateQuestion(animalType);
+    const question = await generateQuestion(animalType, correctAnswers);
+    while (correctAnswers.includes(question.answer)) {
+      question = await generateQuestion(animalType, correctAnswers);
+    }
+    correctAnswers.push(question.answer);
     currentQuestion = question;
     populateQuestion(question, questionCount);
   }
@@ -105,6 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // reset quiz
     score = 0;
     questionCount = 1;
+    correctAnswers = [];
     showLayout(startLayout);
   });
 });
