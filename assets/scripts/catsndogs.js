@@ -73,7 +73,6 @@ export const cats = [
   "Ukrainian Levkoy",
   "York Chocolate",
   "Chausie",
-  "",
 ];
 
 export const dogs = [
@@ -179,5 +178,4 @@ export const dogs = [
   "Pharaoh Hound",
   "Xoloitzcuintli",
   "Dogo Argentino",
-  "",
 ];
