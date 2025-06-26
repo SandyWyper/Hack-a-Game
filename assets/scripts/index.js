@@ -100,13 +100,13 @@ document.addEventListener("DOMContentLoaded", () => {
       setTimeout(async () => {
         if (questionCount <= 10) {
           await nextQuestion();
-          quizBtns.forEach((btn) => {
-            btn.disabled = false;
-          });
         } else {
           showLayout(endLayout);
           showScorePage(score);
         }
+        quizBtns.forEach((btn) => {
+            btn.disabled = false;
+          });
       }, 2000); // spinner shows for 2 seconds
     });
   });
